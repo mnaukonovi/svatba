@@ -17,13 +17,8 @@
                 rgba(135, 206, 235, 0.8) 50%, 
                 rgba(30, 60, 114, 0.9) 100%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
         body::before {
             content: '';
@@ -35,149 +30,147 @@
             background-image: url('pozvanka_A_M.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.3;
-            z-index: -2;
+            opacity: 0.15;
+            z-index: -1;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 80px 50px;
-            border-radius: 25px;
+        
+        .hero-image {
+            max-width: 600px;
+            width: 90%;
+            margin: 0 auto 40px;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .main-container {
             max-width: 550px;
-            width: 100%;
+            margin: 0 auto 40px;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
-        }
-        h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            font-style: italic;
-        }
-        .names {
-            font-size: clamp(2.8rem, 7vw, 4.5rem);
-            color: rgba(255, 255, 255, 0.98);
-            font-weight: 400;
-            margin: 20px 0 40px;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-            font-style: italic;
-        }
-        .date-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
             margin-bottom: 30px;
         }
-        .date-line {
-            font-size: clamp(1.4rem, 4vw, 2.2rem);
-            color: rgba(255, 255, 255, 0.95);
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-        }
-        .location {
-            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+        
+        .info-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.92);
-            letter-spacing: 1.5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        .rsvp-section {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        .rsvp-title {
-            font-size: 1.6rem;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 25px;
-            font-weight: 300;
             letter-spacing: 1px;
         }
+        
+        .info-details {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .rsvp-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .rsvp-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 400;
+            text-align: center;
+        }
+        
         .rsvp-form {
             display: flex;
             flex-direction: column;
             gap: 18px;
         }
+        
         .rsvp-form input, .rsvp-form select {
-            padding: 16px 22px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            padding: 16px 20px;
+            border: 2px solid #e1e8ed;
+            border-radius: 12px;
             font-size: 1rem;
             font-family: inherit;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            backdrop-filter: blur(10px);
+            background: white;
             transition: all 0.3s ease;
         }
-        .rsvp-form input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
+        
         .rsvp-form input:focus, .rsvp-form select:focus {
             outline: none;
-            border-color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            border-color: #3498db;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
         }
+        
         .rsvp-btn {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            padding: 18px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            border: none;
+            border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 400;
+            font-weight: 500;
             font-family: inherit;
             cursor: pointer;
             transition: all 0.3s ease;
-            letter-spacing: 1px;
-            backdrop-filter: blur(10px);
+            margin-top: 10px;
         }
+        
         .rsvp-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
         }
+        
         .success-message {
             display: none;
-            background: rgba(76, 175, 80, 0.3);
-            color: white;
+            background: #d4edda;
+            color: #155724;
             padding: 20px;
-            border-radius: 15px;
-            margin-top: 25px;
-            border: 1px solid rgba(76, 175, 80, 0.5);
-            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 500;
         }
-        @media (max-width: 480px) {
-            .container {
-                padding: 50px 30px;
-                margin: 10px;
+        
+        @media (max-width: 600px) {
+            .hero-image {
+                width: 95%;
+            }
+            .info-box, .rsvp-container {
+                padding: 30px 25px;
             }
         }
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Svatba byla a bude</h1>
-        <div class="names">Aneta & Matouš</div>
-        
-        <div class="date-section">
-            <div class="date-line">SOBOTA 13. ČERVNA 2026</div>
-            <div class="date-line">12:30</div>
+    <!-- Pozvánka na začátku -->
+    <img src="pozvanka_A_M.jpg" alt="Svatební pozvánka" class="hero-image">
+    
+    <div class="main-container">
+        <!-- Jednoduché info okénko -->
+        <div class="info-box">
+            <h2 class="info-title">Svatba byla a bude</h2>
+            <div class="info-details">
+                Aneta & Matouš<br><br>
+                Sobota 13. června 2026<br>
+                12:30<br><br>
+                Kunžak 53, Kunžak
+            </div>
         </div>
         
-        <div class="location">KUNŽAK 53, KUNŽAK</div>
-        
-        <div class="rsvp-section">
+        <!-- RSVP formulář -->
+        <div class="rsvp-container">
             <h2 class="rsvp-title">Potvrď účast</h2>
             <form class="rsvp-form" action="https://formspree.io/f/xlgwgjob" method="POST">
                 <input type="text" name="name" placeholder="Jméno" required>
@@ -186,33 +179,4 @@
                     <option value="yes">Jasně, to si nemůžu nechat ujít</option>
                     <option value="no">Bohužel nemohu</option>
                 </select>
-                <input type="number" name="guests" placeholder="Počet osob (včetně tebe)" min="1" max="10" required>
-                <button type="submit" class="rsvp-btn">Odeslat</button>
-            </div>
-            <div class="success-message" id="success">Děkujeme za potvrzení! Vidíme se na svatbě! 🎉</div>
-        </form>
-    </div>
-
-    <script>
-        const form = document.querySelector('.rsvp-form');
-        const successMsg = document.getElementById('success');
-        
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    successMsg.style.display = 'block';
-                }
-            }).catch(error => {
-                alert('Chyba při odesílání. Zkus to znovu.');
-            });
-        });
-    </script>
-</body>
-</html>
+                <input type="number" name="guests" placeholder="Počet osob (včetně te
