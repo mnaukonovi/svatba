@@ -70,6 +70,7 @@
             margin-bottom: 25px;
             font-weight: 400;
             text-align: center;
+            font-family: 'Playfair Display', serif; /* Sjednocené písmo */
         }
         
         .rsvp-form {
@@ -78,14 +79,20 @@
             gap: 18px;
         }
         
-        .rsvp-form input, .rsvp-form select {
+        .rsvp-form input, 
+        .rsvp-form select {
             padding: 16px 20px;
             border: 2px solid #e1e8ed;
             border-radius: 12px;
             font-size: 1rem;
-            font-family: inherit;
+            font-family: 'Playfair Display', serif; /* STEJNÉ písmo jako info box */
             background: #f8f9fa;
             transition: all 0.3s ease;
+        }
+        
+        .rsvp-form input::placeholder {
+            font-family: 'Playfair Display', serif; /* STEJNÉ písmo i v placeholder */
+            opacity: 0.7;
         }
         
         .rsvp-form input:focus, .rsvp-form select:focus {
@@ -102,11 +109,12 @@
             border: none;
             border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 500;
-            font-family: inherit;
+            font-weight: 400; /* Lehčí váha pro eleganci */
+            font-family: 'Playfair Display', serif; /* STEJNÉ písmo */
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 10px;
+            letter-spacing: 0.5px;
         }
         
         .rsvp-btn:hover {
@@ -122,8 +130,10 @@
             border-radius: 12px;
             margin-top: 20px;
             text-align: center;
-            font-weight: 500;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif; /* STEJNÉ písmo */
             border: 1px solid #c3e6cb;
+            line-height: 1.4;
         }
         
         @media (max-width: 600px) {
@@ -146,7 +156,6 @@
             <h2 class="info-title">Svatba byla a bude</h2>
             <div class="info-details">
                 Tady budou bogo zajimavé veci, co napise Batoček :) <br><br>
-                
             </div>
         </div>
         
