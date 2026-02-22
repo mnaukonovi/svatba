@@ -15,76 +15,97 @@
             background: #f8f7f4;
             min-height: 100vh;
             padding: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #444;
         }
         
         .hero-image {
             max-width: 600px;
             width: 90%;
-            margin: 0 auto 40px;
+            margin: 0 auto 50px;
             display: block;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
         .main-container {
-            max-width: 550px;
-            margin: 0 auto 40px;
+            max-width: 650px;
+            margin: 0 auto;
         }
         
         .info-box {
             background: white;
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            text-align: center;
-            margin-bottom: 30px;
+            text-align: left;
+            margin-bottom: 40px;
         }
         
         .info-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #2c3e50;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             font-weight: 400;
+            text-align: center;
             letter-spacing: 1px;
         }
+
+        .info-subtitle {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin: 35px 0 20px 0;
+            font-weight: 500;
+        }
         
-        .info-details {
-            font-size: 1.3rem;
+        .info-details p {
+            font-size: 1.2rem;
             color: #555;
-            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .key-info {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+            margin: 25px 0;
         }
         
         .rsvp-container {
             background: white;
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            max-width: 500px;
-            margin: 0 auto;
+            max-width: 550px;
+            margin: 0 auto 40px;
         }
         
         .rsvp-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #2c3e50;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 400;
             text-align: center;
-            font-family: 'Playfair Display', serif; 
         }
         
         .rsvp-form {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 20px;
         }
         
         .rsvp-form input, 
         .rsvp-form select {
-            padding: 16px 20px;
+            padding: 18px 22px;
             border: 2px solid #e1e8ed;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-family: 'Playfair Display', serif;
             background: #f8f9fa;
             transition: all 0.3s ease;
@@ -93,6 +114,7 @@
         .rsvp-form input::placeholder {
             font-family: 'Playfair Display', serif; 
             opacity: 0.7;
+            color: #666;
         }
         
         .rsvp-form input:focus, .rsvp-form select:focus {
@@ -103,17 +125,16 @@
         }
         
         .rsvp-btn {
-            padding: 18px;
+            padding: 20px;
             background: linear-gradient(45deg, #3498db, #2980b9);
             color: white;
             border: none;
             border-radius: 12px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 400; 
             font-family: 'Playfair Display', serif;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 10px;
             letter-spacing: 0.5px;
         }
         
@@ -126,23 +147,42 @@
             display: none;
             background: #d4edda;
             color: #155724;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
-            margin-top: 20px;
+            margin-top: 25px;
             text-align: center;
             font-weight: 400;
-            font-family: 'Playfair Display', serif; /* STEJNÉ písmo */
+            font-family: 'Playfair Display', serif;
             border: 1px solid #c3e6cb;
-            line-height: 1.4;
+            line-height: 1.6;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            font-size: 1.15rem;
+            color: #555;
+            padding: 12px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        ul li:before {
+            content: "▸";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
         
         @media (max-width: 600px) {
-            .hero-image {
-                width: 95%;
-            }
-            .info-box, .rsvp-container {
-                padding: 30px 25px;
-            }
+            body { padding: 15px; }
+            .hero-image { width: 95%; margin-bottom: 30px; }
+            .info-box, .rsvp-container { padding: 35px 25px; }
+            .info-title { font-size: 2rem; }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -151,60 +191,67 @@
     <img src="pozvanka_A_M.png" alt="Svatební pozvánka Aneta & Matouš" class="hero-image">
     
     <div class="main-container">
-        <!-- Info okénko -->
+        <!-- Info sekce -->
         <div class="info-box">
-            <h2 class="info-title">Informace</h2>
+            <h1 class="info-title">Informace o svatbě</h1>
+            
             <div class="info-details">
-                Ahoj týpokyně a týpoci,   <br><br>
-                moc rádi bychom Vás pozvali na naší svatbu! <br>
-                Vzhledem k tomu, že v pozvánce samotné toho moc nevyčtete, zkusíme Vám info napsat tady. 
-                 <br><br>
-                Nejdůležitější je, abyste si zablokovali datum z události - samotná svatba je v sobotu 13.6.2026, ale akce je od pátku do neděle.
-                 <br><br>
-                Počítáme s celovíkendovkou- páteční grilovačka, posezení, kytary.... V sobotu klasika - dopolední probíračka, finální přípravy, obřad, oběd, kafe, hry, kapela, after…
-                <br><br>
-                Místo: Kunžak u Jindřichova Hradce, areal: www.svatbanakopci.cz <br>
-                Kdy: 12.-14.6.2026  <br><br>
-                Harmonogram: <br>
-                  <ul>  Pátek - příjezd od 16:00 <br>
-                    Sobota -<br><br>
-                    Nutno dorazit nejdéle: 12:00<br>
-                    Obřad: 12:30 <br>
-                    Přípitek, oběd: 13:30 <br>
-                    Kafe stánek otevírá/končí: 14:00 až 17:00 <br>
-                    Kapela: od 17:00 <br>
-                    Grill: od 18:00 <br>
-                    Afterparty: od 22:00 <br>
-                      </ul>
-        
-
-                Ubytování:<br><br>
-                Co se týče ubytka, areál má cca 100 postelí. Počítáme, že uložíme veškeré dospělé. Co se týče dětí, počítáme, že menší se vejdou s rodiči na manželskou postel, větší si mohou užít dobrodružství formou spacáku a karimatky v chatce rodičů nebo třeba na parketu . Celkově děti na svatbě rádi uvítáme, připravíme pro ně i nějaký zábavný koutek, ale možná ještě radši budeme, pokud dorazíte sami a budete v klidu a pohodě pařit do rána a mít na starost pouze vlastní pohodu. Zároveň se ale se spoustou z Vás vídáme méně než bychom chtěli a o dětech to platí dvojnásob, takže vzít je sebou má taky spoustu výhod. Prostě tak, jak budete chtít a bude se Vám to hodit…. 
-                S tím souvisí, že ty počty ale budeme potřebovat vědět. Níže prosíme o vyplnění dotazníku, zda se zúčastníte celý víkend, nebo jen sobotu (variantu vůbec ani nechceme slyšet). Poté taky, zda s dětma nebo bez. 
-                <br>
-                Dress code:<br<br>
-                Co se týče dress code, moc si s tím nelamte hlavu. Počítáme se slušnějším oblečením, jako pomoc můžete vzít, že ženich půjde v obleku, nevěsta ve svatebních šatech, ale žádné drama z toho dělat nebudeme. 
-
-                <br><br>
-                Pokud jde o dary, hlavně doražte skvěle naladěni, případně preferujeme příspěvek na budoucí lyžařskou dovolenou. 
-
+                <p>Ahoj <strong class="highlight">týpokyně a týpoci</strong>,</p>
                 
+                <p>moc rádi bychom Vás pozvali na naši svatbu! Vzhledem k tomu, že v pozvánce samotné toho moc nevyčtete, zkusíme Vám info napsat tady.</p>
+                
+                <div class="key-info">
+                    <strong>Nejdůležitější:</strong> Zablokujte si datum <strong>12.-14.6.2026</strong><br>
+                    <strong>Místo:</strong> <a href="https://www.svatbanakopci.cz" style="color: #3498db;">Kunžak u Jindřichova Hradce</a>
+                </div>
+
+                <h3 class="info-subtitle">Kdy a kde</h3>
+                <p>Počítáme s <strong>celovíkendovkou</strong> - páteční grilovačka, posezení, kytary... V sobotu klasika - dopolední probíhačka, přípravy, obřad, oběd, kafe, hry, kapela, after...</p>
+
+                <h3 class="info-subtitle">Harmonogram soboty</h3>
+                <ul>
+                    <li><strong>Nutno dorazit nejdéle: 12:00</strong></li>
+                    <li><strong>Obřad: 12:30</strong></li>
+                    <li>Přípitek, oběd: 13:30</li>
+                    <li>Kafe stánek: 14:00 - 17:00</li>
+                    <li>Kapela: od 17:00</li>
+                    <li>Grill: od 18:00</li>
+                    <li>Afterparty: od 22:00</li>
+                </ul>
+                
+                <p><strong>Pátek:</strong> Příjezd od 16:00</p>
+
+                <h3 class="info-subtitle">Ubytování</h3>
+                <p>Areál má cca <strong>100 postelí</strong>. Uložíme veškeré dospělé hosty. Děti rádi uvítáme - menší s rodiči, větší ve spacácích. Připravíme i zábavný koutek.</p>
+                
+                <p><em>Budeme rádi jak s dětmi, tak bez. Vyplňte prosím dotazník níže.</em></p>
+
+                <h3 class="info-subtitle">Dress code</h3>
+                <p>Slušnější oblečení. Ženich v obleku, nevěsta ve svatebních šatech. Žádné drama!</p>
+
+                <h3 class="info-subtitle">Dary</h3>
+                <p>Doražte <strong>skvěle naladění</strong>. Preferujeme příspěvek na budoucí lyžařskou dovolenou.</p>
             </div>
         </div>
         
+        <!-- RSVP formulář -->
         <div class="rsvp-container">
             <h2 class="rsvp-title">Potvrď účast</h2>
             <form class="rsvp-form" action="https://formspree.io/f/xlgwgjob" method="POST">
-                <input type="text" name="name" placeholder="Jméno" required>
+                <input type="text" name="name" placeholder="Vaše jméno" required>
                 <select name="attendance" required>
-                    <option value="">Přijdeš?</option>
-                    <option value="yes">Jasně, to si nemůžu nechat ujít</option>
+                    <option value="">Vyberte účast</option>
+                    <option value="yes">Jasně, přijedu celý víkend</option>
+                    <option value="yes-sat">Pouze sobota</option>
                     <option value="no">Bohužel nemohu</option>
                 </select>
-                <input type="number" name="guests" placeholder="Počet osob" min="1" max="10" required>
-                <button type="submit" class="rsvp-btn">Odeslat</button>
+                <input type="number" name="guests" placeholder="Počet osob (včetně dětí)" min="1" max="10" required>
+                <button type="submit" class="rsvp-btn">Potvrdit účast</button>
             </form>
-            <div class="success-message" id="success">Děkujeme za potvrzení! Vidíme se na svatbě! 🎉</div>
+            <div class="success-message" id="success">
+                Děkujeme za potvrzení! 🎉<br>
+                Těšíme se na vás na svatbě!
+            </div>
         </div>
     </div>
 
@@ -225,10 +272,10 @@
                     form.style.display = 'none';
                     successMsg.style.display = 'block';
                 } else {
-                    alert('Chyba při odesílání. Zkus to znovu.');
+                    alert('Chyba při odesílání. Zkuste to znovu.');
                 }
             }).catch(error => {
-                alert('Chyba při odesílání. Zkus to znovu.');
+                alert('Chyba při odesílání. Zkuste to znovu.');
             });
         });
     </script>
