@@ -197,14 +197,17 @@
                 <p>moc rádi bychom Vás pozvali na naši svatbu! Vzhledem k tomu, že v pozvánce samotné toho moc nevyčtete, zkusíme Vám info napsat tady.</p>
                 
                 <div class="key-info">
-                    <strong>Nejdůležitější zablokujte si datum:</strong> 12.-14.6.2026<br>
+                     Nejdůležitější zablokujte si <strong>datum:</strong> 12.-14.6.2026<br>
                     <strong>Místo:</strong> <a href="https://www.svatbanakopci.cz" style="color: #3498db;">Kunžak u Jindřichova Hradce</a>
                 </div>
 
                 <h3 class="info-subtitle">Kdy a kde</h3>
+                    Nejdůležitější zablokujte si <strong>datum:</strong> 12.-14.6.2026<br>
+                    <strong>Místo:</strong> <a href="https://www.svatbanakopci.cz" style="color: #3498db;">Kunžak u Jindřichova Hradce</a>
+                
                 <p>Počítáme s <strong>celovíkendovkou</strong> - páteční grilovačka, posezení, kytary... V sobotu klasika - dopolední probíhačka, přípravy, obřad, oběd, kafe, hry, kapela, after...</p>
 
-                <h3 class="info-subtitle">Harmonogram soboty</h3>
+                <h3 class="info-subtitle">Harmonogram</h3>
                 <ul>
                     <li><strong>Nutno dorazit nejdéle: 12:00</strong></li>
                     <li><strong>Obřad: 12:30</strong></li>
@@ -237,11 +240,13 @@
                 <input type="text" name="name" placeholder="Vaše jméno" required>
                 <select name="attendance" required>
                     <option value="">Vyberte účast</option>
-                    <option value="yes">Jasně, přijedu celý víkend</option>
+                    <option value="yes">Jasně, přijedu na celý víkend</option>
+                    <option value="yes-sat">Pouze pátek</option>
                     <option value="yes-sat">Pouze sobota</option>
                     <option value="no">Bohužel nemohu</option>
                 </select>
                 <input type="number" name="guests" placeholder="Počet osob (včetně dětí)" min="1" max="10" required>
+                <input type="text" name="poznamka" placeholder="Máte ještě něco na srdci? Napište nám.." required>
                 <button type="submit" class="rsvp-btn">Potvrdit účast</button>
             </form>
             <div class="success-message" id="success">
